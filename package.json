@@ -8,12 +8,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "nprogress": "^0.2.0",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^17.0.31",
+    "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^2.3.1",
     "fs-extra": "^10.1.0",
     "gray-matter": "^4.0.3",

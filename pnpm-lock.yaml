@@ -6,6 +6,7 @@ specifiers:
   '@vitejs/plugin-vue': ^2.3.1
   fs-extra: ^10.1.0
   gray-matter: ^4.0.3
+  nprogress: ^0.2.0
   typescript: ^4.5.4
   unplugin-vue-components: ^0.19.3
   vite: ^2.9.7
@@ -16,6 +17,7 @@ specifiers:
   vue-tsc: ^0.34.7
 
 dependencies:
+  nprogress: 0.2.0
   vue: 3.2.33
   vue-router: 4.0.15_vue@3.2.33
 
@@ -990,6 +992,10 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /nprogress/0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
 
   /object-inspect/1.12.0:
     resolution: {integrity: sha512-Ho2z80bVIvJloH+YzRmpZVQe87+qASmBUKZDWgx9cu+KDrX2ZDH/3tMy+gXbZETVGs2M8YdxObOh7XAtim9Y0g==}
