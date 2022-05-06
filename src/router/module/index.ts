@@ -1,10 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
 
-const routes: RouteRecordRaw[] = [
-    {
-        path: '/',
-        component: () => import('../../views/index.vue')
-    }
-]
+const routes: RouteRecordRaw[] = []
 
 export default routes

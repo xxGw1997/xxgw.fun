@@ -1,6 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import './styles/main.css'
+import { createHead } from '@vueuse/head'
 
-createApp(App).use(router).mount('#app')
+import '@/styles/main.css'
+import '@/styles/prose.css'
+import '@/styles/markdown.css'
+import 'uno.css'
+import '@unocss/reset/tailwind.css'
+
+createApp(App).use(createHead()).use(router).mount('#app')
