@@ -24,6 +24,7 @@ specifiers:
   markdown-it-table-of-contents: ^0.6.0
   nprogress: ^0.2.0
   prism-theme-vars: ^0.2.2
+  typed.js: ^2.0.12
   typescript: ^4.5.4
   unocss: ^0.32.13
   unplugin-icons: ^0.14.3
@@ -42,6 +43,7 @@ dependencies:
   dayjs: 1.11.1
   nprogress: 0.2.0
   prism-theme-vars: 0.2.2
+  typed.js: 2.0.12
   vue: 3.2.33
   vue-router: 4.0.15_vue@3.2.33
 
@@ -1692,6 +1694,10 @@ packages:
     resolution: {integrity: sha512-eM+pCBxXO/njtF7vdFsHuqb+ElbxqtI4r5EAvk6grfAFyJ6IvWlSkfZ5T9ozC6xWw3Fj1fGoSmrl0gUs46JVIw==}
     engines: {node: '>=6'}
     dev: true
+
+  /typed.js/2.0.12:
+    resolution: {integrity: sha512-lyACZh1cu+vpfYY3DG/bvsGLXXbdoDDpWxmqta10IQUdMXisMXOEyl+jos+YT9uBbzK4QaKYBjT3R0kTJO0Slw==}
+    dev: false
 
   /typescript/4.6.4:
     resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}

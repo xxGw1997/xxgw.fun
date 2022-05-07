@@ -5,10 +5,11 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BxBxsFileHtml: typeof import('~icons/bx/bxs-file-html')['default']
+    AboutMe: typeof import('./src/components/AboutMe.vue')['default']
     ComponentTest: typeof import('./src/components/ComponentTest.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     ListPosts: typeof import('./src/components/ListPosts.vue')['default']
+    MdiReplay: typeof import('~icons/mdi/replay')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     Post: typeof import('./src/components/Post.vue')['default']
     RiMarkdownLine: typeof import('~icons/ri/markdown-line')['default']
@@ -18,10 +19,8 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     TablerRoute: typeof import('~icons/tabler/route')['default']
     ToggleTheme: typeof import('./src/components/ToggleTheme.vue')['default']
-    UilServer: typeof import('~icons/uil/server')['default']
     VscodeIconsFileTypeTypescriptOfficial: typeof import('~icons/vscode-icons/file-type-typescript-official')['default']
     VscodeIconsFileTypeVite: typeof import('~icons/vscode-icons/file-type-vite')['default']
-    VscodeIconsFileTypeVue: typeof import('~icons/vscode-icons/file-type-vue')['default']
   }
 }
 

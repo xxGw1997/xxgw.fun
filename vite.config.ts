@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+
 import { resolve } from 'path'
 import Pages from 'vite-plugin-pages'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
+
 import Markdown from 'vite-plugin-md'
 import Prism from 'markdown-it-prism'
 import anchor from 'markdown-it-anchor'
