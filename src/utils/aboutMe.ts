@@ -49,8 +49,14 @@ export const myIntroduce: Introduce[] = [
         weight: 6,
     },
     {
-        words: "zzw,Video game and movie are my favorite!",
+        words: "Video game and movie are my favorite!",
         keyword: ["Video Games 🎮", "Movies 🎥", "LOL"],
+        color: ["#B481BB", "#F19483"],
+        weight: 6,
+    },
+    {
+        words: "zzw's husband.",
+        keyword: ["boyfriend"],
         color: ["#B481BB", "#F19483"],
         weight: 6,
     }
