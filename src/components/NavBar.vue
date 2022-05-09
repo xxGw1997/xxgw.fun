@@ -20,11 +20,11 @@ import { isDark } from "@/utils";
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <!-- <router-link to="/posts">
+        <router-link to="/posts">
           <span lt-md:hidden>Blog</span>
           <div i-ri-article-line md:hidden />
         </router-link>
-        <router-link to="/life" lt-md:hidden>
+        <!-- <router-link to="/life" lt-md:hidden>
           Life
         </router-link> -->
         <a
