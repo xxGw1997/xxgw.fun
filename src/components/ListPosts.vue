@@ -26,7 +26,7 @@ const routes: Post[] = router
   .filter((i) => i.path.startsWith("/post") && getFrontmatter(i).date)
   .sort(
     (a, b) =>
-      +new Date(getFrontmatter(b).date - +new Date(getFrontmatter(a).date))
+      +new Date(getFrontmatter(b).date) - +new Date(getFrontmatter(a).date)
   )
   .filter(
     (i) => !i.path.endsWith(".html") && getFrontmatter(i).type === props.type
@@ -40,7 +40,6 @@ const routes: Post[] = router
   }));
 
 const posts = computed(() => props.posts || routes);
-console.log(router.getRoutes());
 </script>
 
 <template>
