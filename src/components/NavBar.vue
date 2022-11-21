@@ -21,7 +21,7 @@ import { isDark } from "@/utils";
       <div class="spacer" />
       <div class="right">
         <router-link to="/posts">
-          <span lt-md:hidden>Blog</span>
+          <span lt-md:hidden fc>Blog</span>
           <div i-ri-article-line md:hidden />
         </router-link>
         <!-- <router-link to="/life" lt-md:hidden>

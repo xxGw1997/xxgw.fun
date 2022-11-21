@@ -101,6 +101,15 @@ export default defineConfig({
         presetAttributify(),
         presetUno(),
       ],
+      rules: [
+        ['flex', { display: "flex" }],
+        ['f-jc', { "justify-content": "center" }],
+        ['f-ac', { "align-items": "center" }],
+        [/^m-(\d+)$/, ([, d]) => ({ margin: `${Number(d)}px` })]
+      ],
+      shortcuts: {
+        fc: ['flex', 'f-jc', 'f-ac']
+      }
     }),
     Icons({
       defaultClass: 'inline',
