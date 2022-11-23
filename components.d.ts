@@ -12,11 +12,15 @@ declare module '@vue/runtime-core' {
     MdiReplay: typeof import('~icons/mdi/replay')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     Post: typeof import('./src/components/Post.vue')['default']
+    RiMarkdownLine: typeof import('~icons/ri/markdown-line')['default']
     RiMoonLine: typeof import('~icons/ri/moon-line')['default']
     RiSunLine: typeof import('~icons/ri/sun-line')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TablerRoute: typeof import('~icons/tabler/route')['default']
     ToggleTheme: typeof import('./src/components/ToggleTheme.vue')['default']
+    VscodeIconsFileTypeTypescriptOfficial: typeof import('~icons/vscode-icons/file-type-typescript-official')['default']
+    VscodeIconsFileTypeVite: typeof import('~icons/vscode-icons/file-type-vite')['default']
   }
 }
 
