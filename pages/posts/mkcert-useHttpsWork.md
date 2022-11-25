@@ -100,4 +100,6 @@ export default {
 ```
 
 ### 重启项目
-配置完成之后重启项目,会发现之前的 http://localhost:3000 的开发地址打不开了,这是因为配置完成后,需要访问 https://localhost:3000 进行本地开发。这样就让本地开发也有https的凭证了,也符合了google、facebook 登录的功能 配置白名单域名的要求了。
+配置完成之后重启项目,会发现之前的 http://localhost:3000 的开发地址打不开了,这是因为配置完成后,需要访问 https://localhost:3000 进行本地开发。
+
+这样就让本地开发也有https的凭证了,也符合了google、facebook 登录的功能 配置白名单域名的要求了。
