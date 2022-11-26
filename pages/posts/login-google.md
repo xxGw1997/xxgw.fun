@@ -1,9 +1,9 @@
 ---
 title: Nuxt项目集成google第三方登录
 date: 2022-11-25T12:00:00.000+00:00
-tags: ["google", "log"]
+tags: ["google", "login"]
 tagsColor: ["#ba38fe", "#268785"]
-duration: 10min
+duration: 30min
 ---
 
 ## 开启 Google OAuth 服务
