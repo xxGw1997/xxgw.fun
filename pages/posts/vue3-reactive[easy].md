@@ -1,7 +1,7 @@
 ---
 title: Vue3 响应式原理[简易版]
 date: 2022-06-13T20:30:00.000+00:00
-tags: ["Vue3", "响应式原理"]
+tags: ["Vue3", "Vue", "响应式原理"]
 tagsColor: ["#ba38fe", "#268785"]
 duration: 20min
 ---

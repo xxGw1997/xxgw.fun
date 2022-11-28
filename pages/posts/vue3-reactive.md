@@ -1,7 +1,7 @@
 ---
 title: Vue3 Reactive 全家桶
 date: 2022-06-15T20:00:00.000+00:00
-tags: ["Vue3", "Reactive"]
+tags: ["Vue3", "Vue", "Reactive"]
 tagsColor: ["#ba38fe", "#268785"]
 duration: 20min
 ---

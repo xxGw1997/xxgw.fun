@@ -1,7 +1,7 @@
 ---
 title: Vue3 to[...] 系列
 date: 2022-06-12T20:30:00.000+00:00
-tags: ["Vue3", "to[...]"]
+tags: ["Vue3", "Vue", "to[...]"]
 tagsColor: ["#ba38fe", "#268785"]
 duration: 20min
 ---
@@ -43,7 +43,7 @@ const change = () => {
 
 ### toRefs
 
-可以帮我们批量创建 ref 对象主要是方便reactive对象的解构。
+可以帮我们批量创建 ref 对象主要是方便 reactive 对象的解构。
 源码内部实现其实就是循环对象中每个属性。然后调用 toRef 方法
 
 ```js

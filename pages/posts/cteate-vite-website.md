@@ -1,7 +1,7 @@
 ---
 title: 使用Vite2 + Vue3 构建个人网站
 date: 2022-04-30T17:00:00.000+00:00
-tags: ["Vite2", "Vue3", "个人网站搭建"]
+tags: ["Vite2", "Vue3", "Vue", "个人网站搭建"]
 tagsColor: ["#ba38fe", "#268785"]
 duration: 20min
 ---
@@ -12,20 +12,20 @@ duration: 20min
 
 ## 如何搭建一个静态网站？
 
-之前接触过hexo，了解了大致的个人网站的搭建，但是那个是别人已经搭建好的，后面看见[Antony Fu](https://github.com/antfu) 大佬的 [个人网站](https://antfu.me/)，并且自己的技术栈是vue周边的，所以想要使用vue3和vite2，并且使用比较新的技术从0开始去搭建个人网站。网站在完成搭建后，后续只需要在markdown写文章，然后通过vite的插件将 markdown 转换成静态的 html 页面，并自动生成对应的路由页面。所以这篇文章实际上将要介绍的是如何构建一个自动化的静态网站生成器，就像 [VuePress](https://vuepress.vuejs.org/), [Hexo](https://hexo.io/) 那样。
+之前接触过 hexo，了解了大致的个人网站的搭建，但是那个是别人已经搭建好的，后面看见[Antony Fu](https://github.com/antfu) 大佬的 [个人网站](https://antfu.me/)，并且自己的技术栈是 vue 周边的，所以想要使用 vue3 和 vite2，并且使用比较新的技术从 0 开始去搭建个人网站。网站在完成搭建后，后续只需要在 markdown 写文章，然后通过 vite 的插件将 markdown 转换成静态的 html 页面，并自动生成对应的路由页面。所以这篇文章实际上将要介绍的是如何构建一个自动化的静态网站生成器，就像 [VuePress](https://vuepress.vuejs.org/), [Hexo](https://hexo.io/) 那样。
 
 主要用到的技术栈：
 
 - 基于 <vscode-icons-file-type-vite /> [Vite.js](https://vitejs.dev/) 和 <div i-logos:vue /> [Vue.js - 3.0](https://v3.vuejs.org/)，支持 <vscode-icons-file-type-typescript-official /> [TypeScript](https://www.typescriptlang.org/)
 - 基于文件系统的 <tabler-route /> 路由
 - 支持 <ri-markdown-line /> Markdown 组件, 可以在 Markdown 中使用 Vue 组件
-<!-- - 纯粹的 <bx-bxs-file-html /> 静态页面，支持 <uil-server /> 服务端生成 -->
+  <!-- - 纯粹的 <bx-bxs-file-html /> 静态页面，支持 <uil-server /> 服务端生成 -->
 
 接下来逐步记录每个所用到的插件
 
 ## 首先生成一个 Vite 项目
 
-Vite 是 2020 年 [Evan You](https://github.com/yyx990803) 为我们带来的一个下一代前端开发与构建工具。天下苦webpack久矣，就是快，非常快。
+Vite 是 2020 年 [Evan You](https://github.com/yyx990803) 为我们带来的一个下一代前端开发与构建工具。天下苦 webpack 久矣，就是快，非常快。
 
 生成一个 Vite 项目 (Vite requires Node.js version >=12.2.0.):
 
@@ -33,7 +33,7 @@ Vite 是 2020 年 [Evan You](https://github.com/yyx990803) 为我们带来的一
 $ pnpm create @vite
 ```
 
-终端敲下命令,短时间加载后需要输入项目的名称,选择 Vue 框架的TS版本,然后cd进入项目目录，安装依赖后启动项目。
+终端敲下命令,短时间加载后需要输入项目的名称,选择 Vue 框架的 TS 版本,然后 cd 进入项目目录，安装依赖后启动项目。
 
 就像你用 [vue-cli](https://cli.vuejs.org/) 构建的 Vue 项目一样，项目源码都被放置在`src`目录下，入口同样是`main.ts`文件。而框架的配置文件则由`vue.config.js`换成了`vite.config.ts`。此时这只是一个简单的 Vue 项目（只是把构建器从 Webpack 换成了 Vite），距离我们的目标还相去甚远。接下来我们需要安装各种 <code>[vite-plugin-\*](https://github.com/vitejs/awesome-vite#plugins)</code>，即 Vite 的插件，插件将在`vite.config.ts`中配置。
 
@@ -55,7 +55,7 @@ export default defineConfig({
 
 ## 文件路由
 
-什么是文件路由？确切的说应该是**基于文件系统的路由（file system based routing）**。网站搭建后，我们只需要将平时的文章内容写在 markdown和.vue页面中，然后借助vite插件可以自动生成对应文件名的路由，而访问者只要访问具体的路由，即可访问对应文件包含的内容了，这样可以省去在vue-router中去针对每一篇文章写对应的路由映射表了。
+什么是文件路由？确切的说应该是**基于文件系统的路由（file system based routing）**。网站搭建后，我们只需要将平时的文章内容写在 markdown 和.vue 页面中，然后借助 vite 插件可以自动生成对应文件名的路由，而访问者只要访问具体的路由，即可访问对应文件包含的内容了，这样可以省去在 vue-router 中去针对每一篇文章写对应的路由映射表了。
 
 这个插件就是<code>[vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages)</code>
 
@@ -74,10 +74,10 @@ $ npm install @types/fs-extra @types/node fs-extra gray-matter -D
 ```ts
 // vite.config.ts (以下为该插件的配置，不包括其他插件的配置)
 // ...
-import { resolve } from 'path'
-import Pages from 'vite-plugin-pages'
-import fs from 'fs-extra'
-import matter from 'gray-matter'
+import { resolve } from "path";
+import Pages from "vite-plugin-pages";
+import fs from "fs-extra";
+import matter from "gray-matter";
 
 // plugins settings
 export default defineConfig({
@@ -87,11 +87,11 @@ export default defineConfig({
       extensions: ["vue", "md"],
       dirs: "pages",
       extendRoute(route) {
-        const path = resolve(__dirname, route.component.slice(1))
-        const md = fs.readFileSync(path, 'utf-8')
-        const { data } = matter(md)
-        route.meta = Object.assign(route.meta || {}, { frontmatter: data })
-        return route
+        const path = resolve(__dirname, route.component.slice(1));
+        const md = fs.readFileSync(path, "utf-8");
+        const { data } = matter(md);
+        route.meta = Object.assign(route.meta || {}, { frontmatter: data });
+        return route;
       },
     }),
   ],
@@ -100,7 +100,7 @@ export default defineConfig({
 
 - `extensions`：需要包含的文件类型，这里显然是 `.vue` 和 `.md` 文件。
 - `dirs`：寻找文件的目录，这里选择了项目根目录下的 `pages` 目录。
-- `extendRoute`：扩展router方法，可以对每个路由文件进行处理，比如对route的meta元信息进行处理。
+- `extendRoute`：扩展 router 方法，可以对每个路由文件进行处理，比如对 route 的 meta 元信息进行处理。
 - `front-matter`：markdown 文件顶部，由 `---` 包裹的一块区域，可以记录文章标题、作者、时间等信息：
   ```md
   ---
@@ -114,9 +114,10 @@ export default defineConfig({
 
 然后我们来修改一下项目中的一些文件，让它们的功能和结构符合当前的插件配置。
 
-为了让路由在 app 中生效，我们需要创建一个`router`，并让 app use 。在src目录下新建一个router专门用来管理路由,在router文件夹中创建index.ts 用作入口文件：
+为了让路由在 app 中生效，我们需要创建一个`router`，并让 app use 。在 src 目录下新建一个 router 专门用来管理路由,在 router 文件夹中创建 index.ts 用作入口文件：
 
 先来配置路由的基本信息
+
 ```bash
 # 这里可以一起先安装一下nprogress,这个可以让我们页面在路由跳转时在顶部显示进度条。
 $ npm install nprogress
@@ -125,45 +126,47 @@ $ npm install @types/nprogress -D
 
 ```ts
 // src/router/index.ts
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import NProgress from 'nprogress'
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import NProgress from "nprogress";
 // 将自动生成页面的路由导入
-import generaterRoutes from 'pages-generated'
+import generaterRoutes from "pages-generated";
 
-const routes: RouteRecordRaw[] = []
+const routes: RouteRecordRaw[] = [];
 // 将当前目录中所有二点module下的所有配置的路由映射表导入
-const modules = import.meta.globEager('./module/*.ts')
+const modules = import.meta.globEager("./module/*.ts");
 for (const path in modules) {
-    routes.push(...modules[path].default)
+  routes.push(...modules[path].default);
 }
 
 // 在添加完配置好的路由表后,再将vite自动生成的page下的页面路由加入到routes中
-routes.push(...generaterRoutes)
+routes.push(...generaterRoutes);
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes
-})
+  history: createWebHistory(),
+  routes,
+});
 
 //  在全局的路由的钩子中将进度条动画显示
-router.beforeEach((to,from,next) => {
-    NProgress.start()
-    next()
-})
+router.beforeEach((to, from, next) => {
+  NProgress.start();
+  next();
+});
 
 router.afterEach(() => {
-    NProgress.done()
-})
+  NProgress.done();
+});
 
-export default router
+export default router;
 ```
 
 ```ts
 //  src/main.ts
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-createApp(App).use(router).mount('#app')
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+createApp(App)
+  .use(router)
+  .mount("#app");
 ```
 
 <blockquote>
@@ -286,7 +289,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [
         IconsResolver({
-          componentPrefix: '',
+          componentPrefix: "",
         }),
       ],
     }),

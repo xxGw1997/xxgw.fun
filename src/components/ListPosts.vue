@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import { formatDate } from "@/utils";
+import { formatDate, vueOnly } from "@/utils";
 import { computed } from "vue";
 
 export interface Post {
@@ -9,6 +9,7 @@ export interface Post {
   date: string;
   lang?: string;
   duration?: string;
+  tags?: Array<string>;
 }
 
 const props = defineProps<{
@@ -37,9 +38,14 @@ const routes: Post[] = router
     date: getFrontmatter(i).date,
     lang: getFrontmatter(i).lang,
     duration: getFrontmatter(i).duration,
+    tags: getFrontmatter(i).tags,
   }));
 
-const posts = computed(() => props.posts || routes);
+const posts = computed(() =>
+  (props.posts || routes).filter(
+    (i) => !vueOnly.value || (i.tags?.indexOf("Vue") as Number) > -1
+  )
+);
 </script>
 
 <template>

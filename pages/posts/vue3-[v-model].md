@@ -1,7 +1,7 @@
 ---
 title: Vue3 v-model
 date: 2022-06-12T20:30:00.000+00:00
-tags: ["Vue3", "v-model"]
+tags: ["Vue3", "Vue", "v-model"]
 tagsColor: ["#ba38fe", "#268785"]
 duration: 20min
 ---

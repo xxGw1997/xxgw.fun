@@ -1,7 +1,7 @@
 ---
 title: 记录使用vue3来开发一个可视化编辑器
 date: 2022-05-11T10:30:00.000+00:00
-tags: ["Vue3", "可视化编辑器"]
+tags: ["Vue3", "Vue", "可视化编辑器"]
 tagsColor: ["#ba38fe", "#268785"]
 duration: 20min
 ---
@@ -72,3 +72,4 @@ export default defineConfig({
   - 对画布中每个组件block添加onMousedown事件,在点击该block时,为该block添加focus属性为true（focus属性的作用是用来表示画布中哪些block被选中,如果focus是true的block外层会有线包裹住）并且再次点击时置为false.当点击其他block时,先将所有block的focus置为false,然后再将当前点击的block的focus设置为true,如果是按住ctrl键选择,则不需要要将其他的block的focus设置为false,直接将当前的block的focus也设置为true即可.并且将当前点击的block的index记录下来,为之后的辅助线对齐功能保存数据.除了这些之外还需要保存当前鼠标的x,y的值;选中元素的left,top值;以及所有选中了的block的top和left值。以及要动态计算所有未被选中的block应该显示辅助线的位置坐标信息。辅助线分别有x线和y线两条方向的线需要记录.然后再添加鼠标拖拽移动和鼠标松开的事件
   - mousmove事件, 事件触发时需要将选中元素中那个鼠标点击的元素与其他未选中的所有元素进行对比辅助线的信息,如果x线或者y线与点击元素的位置小于5,则需要添加自动吸附的功能,并且将此时的辅助线的x值或者y值进行赋值,没有符合的话x值或y值为null,这个值会在画布中显示对应的辅助线,如果x或y不为null则会显示到对应的位置.然后还需要将所有选中的block的top值和left随移动的位置进行动态变化.
   - mouseup事件, 事件触发时说明鼠标已经松开,则需要把对应注册的事件移除监听.并且将辅助线清空.
+```
