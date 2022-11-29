@@ -140,8 +140,12 @@ interface Use {
 // 以防重复注册
 const installList = new Set()
 export function myUse<T extends Use>(plugin: T, ...options: any[]) {
-    if (!installList.has(plugin)) return
-    plugin.install(app, ...options)
-    installList.add(plugin)
+    // 如果没有添加过,则做注册插件操作,并且将插件添加到installList中
+    if (!installList.has(plugin)) {
+      plugin.install(app, ...options)
+      installList.add(plugin)
+    }
+    // 最终返回当前实例,可实现链式调用
+    return app
 }
 ```
