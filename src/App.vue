@@ -5,7 +5,7 @@ import { useHead } from "@vueuse/head";
 useHead({
   meta: [
     { property: "og:title", content: "xxGw" },
-    { name: "description", content: "Archer Gu's Room" },
+    { name: "description", content: "xxgw's Room" },
   ],
 });
 </script>
